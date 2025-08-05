@@ -1,0 +1,153 @@
+/*sets body which is the container of all containers and to full width
+and does not add any extra space around the edges, and does the same to body
+
+Header is first container, with a fixed position
+followed by main-content and lastly footer*/
+.header, .footer, .main-content, body{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+/*set's flex containers to full width and chooses flex to style elements with flex properties
+so header, main-content and footer are given flex abilities through this*/
+.nav-container, .main-content-container, .footer-container {
+    display: flex;
+    width: 100%;
+}
+
+
+/*make header sticky and display over all elements*/
+.header {
+    position: sticky;
+    height: 60px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    font-family: 'Arial', sans-serif;
+    text-transform: capitalize;
+}
+/*container to give nav flex properties*/
+.nav-container {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(255, 255, 255, 0.789);
+}
+/*logo container for nav*/
+.nav-logo-container {
+    margin: 0;
+    width: 15%;
+    display: flex;
+    overflow: hidden;
+}
+/*logo image in nav*/
+.nav-logo {
+    width: 100%;
+    height: auto;
+}
+/*menu container for nav*/
+.nav-menu-container {
+    margin: 0;
+    display: flex;
+    width: 85%;
+    justify-content: flex-end; /* Add this to align menu right */
+}
+/*menu in nav*/
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+    /* overflow: hidden; REMOVE THIS LINE */
+}
+/*style links in menu*/
+.nav-menu ul li a {
+    text-decoration: none;
+    color: #333;
+    display: inline-block;
+    text-align: center;
+    padding: 10px 15px; /* Add padding for better clickable area */
+}
+.nav-menu ul:last-child {
+    margin-right: 20px; /* Add right margin to last menu item */
+}
+
+
+
+
+
+/* Add position relative to dropdown parent */
+.nav-menu .dropdown-btn {
+    position: relative; /* ADD THIS - Creates positioning context */
+}
+/* Hide dropdown by default */
+.nav-menu .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%; /* Position below parent */
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    min-width: 200px;
+    z-index: 1001; /* Above navbar */
+    padding: 10px 0; /* Add padding for spacing */
+}
+/* Show dropdown on hover */
+.nav-menu .dropdown-btn:hover .dropdown {
+    display: block; /* Change to block */
+}
+/* Style dropdown links - REMOVE li selector if using div */
+.nav-menu .dropdown a {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.nav-menu .dropdown a:hover {
+    background-color: #f0f0f0;
+}
+
+
+
+
+
+
+/*aligns main content top with top of navbar*/
+.main-content {
+    position: relative;
+    margin-top: -60px;
+    top: 0;
+}
+/*container that gives main-content flex properties*/
+.main-content-container {
+    margin: 0;
+}
+/*container for first section of main*/
+.home-intro-image-container {
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+    display: block;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+.home-intro-image{
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+.home-intro-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
