@@ -3,7 +3,7 @@ and does not add any extra space around the edges, and does the same to body
 
 Header is first container, with a fixed position
 followed by main-content and lastly footer*/
-.header, .footer, .main-content, body{
+.header, .footer, .main-content, body, .contact-bar{
     width: 100%;
     margin: 0;
     padding: 0;
@@ -16,6 +16,66 @@ so header, main-content and footer are given flex abilities through this*/
 }
 
 
+
+.contact-bar {
+    display: flex;
+    line-height: 55px;
+    background-color: #020061; /* color */
+    position: relative;
+    color: white;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+    align-items: center; /* Center content vertically */
+    justify-content: left; /* Align content to the left */
+}
+
+.contact-bar p {
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.contact-bar span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Space between icon and text */
+}
+
+/* Style Google Material Icons */
+.contact-bar .material-icons {
+    font-size: 18px;
+    color: #ffcc00; /* Yellow color */
+    vertical-align: middle;
+}
+
+.contact-bar a {
+    color: white;
+    text-decoration: none;
+    -o-transition: color 0.3s ease;
+    -webkit-transition: color 0.3s ease;
+    -moz-transition: color 0.3s ease;
+    -ms-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+}
+.contact-bar a:hover {
+    color: #ffcc00; /* Yellow hover color */
+    text-decoration: underline;
+}
+.contact-bar .contact-email {
+    margin-left: 5vw;
+}
+.contact-bar .contact-tel {
+    margin-left: 10vw;
+}
+.contact-bar .contact-address {
+    position: absolute;
+    right: 10vw;
+}
+
+
+
 /*make header sticky and display over all elements*/
 .header {
     position: sticky;
@@ -25,7 +85,6 @@ so header, main-content and footer are given flex abilities through this*/
     right: 0;
     z-index: 1000;
     font-family: 'Arial', sans-serif;
-    text-transform: capitalize;
 }
 /*container to give nav flex properties*/
 .nav-container {
@@ -34,6 +93,7 @@ so header, main-content and footer are given flex abilities through this*/
     margin: 0;
     padding: 0;
     background-color: rgba(255, 255, 255, 0.789);
+    height: 100%;
 }
 /*logo container for nav*/
 .nav-logo-container {
@@ -52,7 +112,9 @@ so header, main-content and footer are given flex abilities through this*/
     margin: 0;
     display: flex;
     width: 85%;
-    justify-content: flex-end; /* Add this to align menu right */
+    height: 100%;
+    justify-content: center;
+    align-items: center; /* Center vertically */
 }
 /*menu in nav*/
 .nav-menu ul {
@@ -61,18 +123,58 @@ so header, main-content and footer are given flex abilities through this*/
     padding: 0;
     margin: 0;
     gap: 20px;
-    /* overflow: hidden; REMOVE THIS LINE */
 }
 /*style links in menu*/
 .nav-menu ul li a {
+    margin: 0;
+    padding: 0;
     text-decoration: none;
-    color: #333;
-    display: inline-block;
+    color: #002970;
+    font-weight: bold;
+    display: block;
     text-align: center;
-    padding: 10px 15px; /* Add padding for better clickable area */
+    padding: 6px 10px; /* Add padding for better clickable area */
 }
-.nav-menu ul:last-child {
-    margin-right: 20px; /* Add right margin to last menu item */
+.nav-menu ul li a:hover {
+    color: #414141; /* Change color on hover */
+}
+.nav-menu ul li.nav-contact a:hover {
+    background-color: #002970;
+    color: rgb(252, 252, 252);}
+.nav-menu ul li.active a {
+    border-bottom: 2px solid #002970; /* Add underline to active link */
+}
+
+
+.nav-menu ul li.nav-contact a {
+    position: absolute;
+    right: 1vw;
+    border: 2px solid #002970;
+    font-size: 0.9rem;
+    -o-border-radius: 10px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius:20px;
+    -ms-border-radius:20px;
+    -o-border-radius:20px;
+    border-radius:20px;
+}
+/* Add arrow to dropdown buttons */
+.nav-menu .dropdown-btn > a::after {
+    content: "⩔";
+    /*Down-pointingtrianglebar*/vertical-align: top;
+    font-size: 0.8em;
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+    display: inline-block;
+    /*Remove the initial rotation since it's already pointing down*/
+}
+/* Rotate arrow on hover */
+.nav-menu .dropdown-btn:hover > a::after {
+    -o-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
 }
 
 
@@ -94,7 +196,9 @@ so header, main-content and footer are given flex abilities through this*/
     border-radius: 5px;
     min-width: 200px;
     z-index: 1001; /* Above navbar */
+    font-size: 0.9em; /* Slightly smaller font size */
     padding: 10px 0; /* Add padding for spacing */
+    text-align: left; /* ADD THIS - Align text left */
 }
 /* Show dropdown on hover */
 .nav-menu .dropdown-btn:hover .dropdown {
@@ -107,6 +211,8 @@ so header, main-content and footer are given flex abilities through this*/
     color: #333;
     text-decoration: none;
     white-space: nowrap;
+    text-align: left; /* ADD THIS - Align text left */
+    text-transform: none; /* ADD THIS - Remove uppercase from dropdown items */
 }
 .nav-menu .dropdown a:hover {
     background-color: #f0f0f0;
@@ -145,9 +251,13 @@ so header, main-content and footer are given flex abilities through this*/
 }
 .home-intro-text {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    top: 40%;
+    left: 10vw;
+    font-family: 'Montserrat', sans-serif;
     color: white;
+}
+h1 {
+    font-size: 3rem;
+    margin: 0;
+    padding: 0;
 }
