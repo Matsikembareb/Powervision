@@ -3,16 +3,17 @@ and does not add any extra space around the edges, and does the same to body
 
 Header is first container, with a fixed position
 followed by main-content and lastly footer*/
-.header, .footer, .main-content, body, .contact-bar{
+.header, .footer, .main-content, body, .contact-bar {
     width: 100%;
     margin: 0;
     padding: 0;
 }
 /*set's flex containers to full width and chooses flex to style elements with flex properties
 so header, main-content and footer are given flex abilities through this*/
-.nav-container, .main-content-container, .footer-container {
+.nav-container, .main-content-container, .footer-container, .container, .hero{
     display: flex;
     width: 100%;
+    margin: 0;
 }
 
 
@@ -88,7 +89,6 @@ so header, main-content and footer are given flex abilities through this*/
 }
 /*container to give nav flex properties*/
 .nav-container {
-    display: flex;
     align-items: center;
     margin: 0;
     padding: 0;
@@ -133,16 +133,17 @@ so header, main-content and footer are given flex abilities through this*/
     font-weight: bold;
     display: block;
     text-align: center;
-    padding: 6px 10px; /* Add padding for better clickable area */
+    padding: 6px 10px; /* Added padding for better clickable area */
 }
 .nav-menu ul li a:hover {
-    color: #414141; /* Change color on hover */
+    color: #414141; /* Changes color on hover */
 }
 .nav-menu ul li.nav-contact a:hover {
-    background-color: #002970;
-    color: rgb(252, 252, 252);}
+    background-color: #020061;
+    color: rgb(252, 252, 252);
+}
 .nav-menu ul li.active a {
-    border-bottom: 2px solid #002970; /* Add underline to active link */
+    border-bottom: 2px solid #002970; /* Adds underline to active link */
 }
 
 
@@ -158,15 +159,14 @@ so header, main-content and footer are given flex abilities through this*/
     -o-border-radius:20px;
     border-radius:20px;
 }
-/* Add arrow to dropdown buttons */
+/* Adds arrow to dropdown buttons */
 .nav-menu .dropdown-btn > a::after {
-    content: "⩔";
-    /*Down-pointingtrianglebar*/vertical-align: top;
+    content: "⩔";    /*Down-pointing triangle bar*/
+    vertical-align: top;
     font-size: 0.8em;
     margin-left: 5px;
     transition: transform 0.3s ease;
     display: inline-block;
-    /*Remove the initial rotation since it's already pointing down*/
 }
 /* Rotate arrow on hover */
 .nav-menu .dropdown-btn:hover > a::after {
@@ -183,7 +183,7 @@ so header, main-content and footer are given flex abilities through this*/
 
 /* Add position relative to dropdown parent */
 .nav-menu .dropdown-btn {
-    position: relative; /* ADD THIS - Creates positioning context */
+    position: relative; /*Creates positioning context */
 }
 /* Hide dropdown by default */
 .nav-menu .dropdown {
@@ -198,21 +198,21 @@ so header, main-content and footer are given flex abilities through this*/
     z-index: 1001; /* Above navbar */
     font-size: 0.9em; /* Slightly smaller font size */
     padding: 10px 0; /* Add padding for spacing */
-    text-align: left; /* ADD THIS - Align text left */
+    text-align: left; /*Align text left */
 }
 /* Show dropdown on hover */
 .nav-menu .dropdown-btn:hover .dropdown {
     display: block; /* Change to block */
 }
-/* Style dropdown links - REMOVE li selector if using div */
+/* Style dropdown links */
 .nav-menu .dropdown a {
     display: block;
     padding: 10px 15px;
     color: #333;
     text-decoration: none;
     white-space: nowrap;
-    text-align: left; /* ADD THIS - Align text left */
-    text-transform: none; /* ADD THIS - Remove uppercase from dropdown items */
+    text-align: left;
+    text-transform: none;
 }
 .nav-menu .dropdown a:hover {
     background-color: #f0f0f0;
@@ -223,17 +223,19 @@ so header, main-content and footer are given flex abilities through this*/
 
 
 
-/*aligns main content top with top of navbar*/
+/*TO BE IMPROVED - aligns main content top with top of navbar*/
 .main-content {
     position: relative;
-    margin-top: -60px;
+    margin-top: -120px;
     top: 0;
 }
 /*container that gives main-content flex properties*/
 .main-content-container {
     margin: 0;
+
 }
-/*container for first section of main*/
+
+/*container for IMAGE below navbar*/
 .home-intro-image-container {
     z-index: -1;
     width: 100%;
@@ -241,6 +243,7 @@ so header, main-content and footer are given flex abilities through this*/
     display: block;
     padding: 0;
     margin: 0;
+    max-height: 100vh;
     overflow: hidden;
 }
 .home-intro-image{
@@ -249,6 +252,7 @@ so header, main-content and footer are given flex abilities through this*/
     height: 100vh;
     object-fit: cover;
 }
+/*intro text below navbar*/
 .home-intro-text {
     position: absolute;
     top: 40%;
@@ -261,3 +265,6 @@ h1 {
     margin: 0;
     padding: 0;
 }
+
+/* Services Overview Section */
+
