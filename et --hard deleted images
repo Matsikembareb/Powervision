@@ -1,0 +1,16 @@
+[33m0bb2807[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{0}: commit: minor changes
+[33m86a1f76[m HEAD@{1}: reset: moving to HEAD~7
+[33m54d9047[m HEAD@{2}: commit: minor changes
+[33m0f20814[m HEAD@{3}: commit: fixed git issue
+[33m94a0f65[m HEAD@{4}: commit: deleted images
+[33m5000dd7[m HEAD@{5}: commit: minor change
+[33mb1dd32c[m HEAD@{6}: commit: removed/added few photos in project files
+[33mbb5bd98[m HEAD@{7}: commit: finished home intro layout
+[33m1a6fd99[m HEAD@{8}: commit: put intro image in contact bar
+[33m86a1f76[m HEAD@{9}: commit: added sample content
+[33md736d2d[m HEAD@{10}: commit: Refactor code structure for improved readability and maintainability
+[33ma505823[m HEAD@{11}: checkout: moving from main to main
+[33ma505823[m HEAD@{12}: checkout: moving from main to main
+[33ma505823[m HEAD@{13}: commit: Enhance homepage layout with hero section, services overview, and contact bar; update styles for improved UI
+[33m0b1a0fe[m HEAD@{14}: commit: Add initial HTML structure and CSS styles for Powervision website
+[33ma413712[m HEAD@{15}: clone: from https://github.com/Matsikembareb/Powervision.git
